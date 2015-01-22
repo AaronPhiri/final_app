@@ -1,0 +1,19 @@
+class CreateCohorts < ActiveRecord::Migration
+  def change
+    create_table :cohorts do |t|
+      t.varchar :name
+      t.varchar :description
+      t.int :creator
+      t.datetime :date_created
+      t.smallint :voided
+      t.int :voided_by
+      t.datetime :date_voided
+      t.varchar :void_reason
+      t.int :changed_by
+      t.datetime :date_changed
+      t.char :uuid
+
+      t.timestamps
+    end
+  end
+end

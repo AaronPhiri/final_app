@@ -1,0 +1,5 @@
+class Addcolumn < ActiveRecord::Migration
+  def change
+    add_column("users","user_online",:integer,:limit => 20)
+  end
+end

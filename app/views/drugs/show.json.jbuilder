@@ -1,0 +1,1 @@
+json.extract! @drug, :id, :drug_id, :concept_id, :name, :combination, :dosage_form, :dosage_strength, :maximum_daily_dose, :minimum_daily_dose, :route, :units, :creator, :date_created, :retired, :retired_by, :date_retired, :retire_reason, :uuid, :created_at, :updated_at

@@ -1,0 +1,57 @@
+<h1>Listing drugs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Drug</th>
+      <th>Concept</th>
+      <th>Name</th>
+      <th>Combination</th>
+      <th>Dosage form</th>
+      <th>Dosage strength</th>
+      <th>Maximum daily dose</th>
+      <th>Minimum daily dose</th>
+      <th>Route</th>
+      <th>Units</th>
+      <th>Creator</th>
+      <th>Date created</th>
+      <th>Retired</th>
+      <th>Retired by</th>
+      <th>Date retired</th>
+      <th>Retire reason</th>
+      <th>Uuid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drugs.each do |drug| %>
+      <tr>
+        <td><%= drug.drug_id %></td>
+        <td><%= drug.concept_id %></td>
+        <td><%= drug.name %></td>
+        <td><%= drug.combination %></td>
+        <td><%= drug.dosage_form %></td>
+        <td><%= drug.dosage_strength %></td>
+        <td><%= drug.maximum_daily_dose %></td>
+        <td><%= drug.minimum_daily_dose %></td>
+        <td><%= drug.route %></td>
+        <td><%= drug.units %></td>
+        <td><%= drug.creator %></td>
+        <td><%= drug.date_created %></td>
+        <td><%= drug.retired %></td>
+        <td><%= drug.retired_by %></td>
+        <td><%= drug.date_retired %></td>
+        <td><%= drug.retire_reason %></td>
+        <td><%= drug.uuid %></td>
+        <td><%= link_to 'Show', drug %></td>
+        <td><%= link_to 'Edit', edit_drug_path(drug) %></td>
+        <td><%= link_to 'Destroy', drug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Drug', new_drug_path %>

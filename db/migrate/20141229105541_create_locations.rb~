@@ -1,0 +1,31 @@
+class CreateLocations < ActiveRecord::Migration
+  def change
+    create_table :locations do |t|
+      t.varchar :name
+      t.varchar :description
+      t.varchar :address1
+      t.varchar :address2
+      t.varchar :city_village
+      t.varchar :state_province
+      t.varchar :postal_code
+      t.varchar :country
+      t.varchar :latitude
+      t.varchar :longitude
+      t.int :creator
+      t.datetime :date_created
+      t.varchar :country_district
+      t.varchar :neighborhood_cell
+      t.varchar :region
+      t.varchar :subregion
+      t.varchar :township_division
+      t.tinyint :retired
+      t.int :retired_by
+      t.datetime :date_retired
+      t.varchar :retire_reason
+      t.int :parent_location
+      t.char :uuid
+
+      t.timestamps
+    end
+  end
+end

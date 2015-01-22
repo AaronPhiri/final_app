@@ -1,0 +1,25 @@
+class CreateDrugs < ActiveRecord::Migration
+  def change
+    create_table :drugs do |t|
+      t.int :drug_id
+      t.int :concept_id
+      t.varchar :name
+      t.smallint :combination
+      t.int :dosage_form
+      t.double :dosage_strength
+      t.double :maximum_daily_dose
+      t.double :minimum_daily_dose
+      t.int :route
+      t.varchar :units
+      t.int :creator
+      t.datetime :date_created
+      t.smallint :retired
+      t.int :retired_by
+      t.datetime :date_retired
+      t.varchar :retire_reason
+      t.char :uuid
+
+      t.timestamps
+    end
+  end
+end

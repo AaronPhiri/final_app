@@ -1,0 +1,27 @@
+<h1>Listing roles_privileges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Privilege</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles_privileges.each do |roles_privilege| %>
+      <tr>
+        <td><%= roles_privilege.role %></td>
+        <td><%= roles_privilege.privilege %></td>
+        <td><%= link_to 'Show', roles_privilege %></td>
+        <td><%= link_to 'Edit', edit_roles_privilege_path(roles_privilege) %></td>
+        <td><%= link_to 'Destroy', roles_privilege, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roles privilege', new_roles_privilege_path %>

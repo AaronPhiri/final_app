@@ -1,0 +1,64 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+      <tr>
+				    <th> <%= f.label :patient_id,("patient ID :") %></th>
+		
+				    <td><%= f.text_field :patient_id  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :tribe,("Tribe:") %></th>
+		
+				    <td><%= f.select(:tribe,@tribes.map{|p| [p.name,p.id]}) %></td>
+        
+      </tr>
+<tr>
+				    <th> <%= f.label :voided,("Voided :")%></th>
+		
+				    <td><%= f.select(:voided,{"NO" => "0","YES" => "1"})%></td>
+        
+      </tr>
+<tr>
+				    <th><%= f.label :void_reason,("Void Reason :") %></th>
+		
+				    <td><%= f.text_field :void_reason %></td>
+        
+      </tr>
+			
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save User ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+
+
+
+  
+  
+  
+<% end %>

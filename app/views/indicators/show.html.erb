@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @indicator.user_id %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @indicator.role %>
+</p>
+
+<%= link_to 'Edit', edit_indicator_path(@indicator) %> |
+<%= link_to 'Back', indicators_path %>

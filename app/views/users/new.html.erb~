@@ -1,0 +1,17 @@
+<% @page_title ="Create User Page"%>
+<div id="show"><h1> create New user</h1></div>
+<div>
+<div id="form">
+			<%= render 'form' %>
+</div>
+</br>
+<div id="backonnewuser">
+								<table>
+								<tr>
+														<td><%=button_to("<<Back",users_path,:method => "get",:id => "button")%></td>
+											</tr>
+								</table>
+		</div>
+</div>
+</br>
+		

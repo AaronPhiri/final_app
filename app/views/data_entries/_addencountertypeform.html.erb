@@ -1,0 +1,53 @@
+<%= form_for(@encounters_type) do |f| %>
+  <% if @encounters_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounters_type.errors.count, "error") %> prohibited this encounters_type from being saved:</h2>
+
+      <ul>
+      <% @encounters_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br>
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :retired %><br>
+    <%= f.text_field :retired %>
+  </div>
+  <div class="field">
+    <%= f.label :retired_by %><br>
+    <%= f.text_field :retired_by %>
+  </div>
+  <div class="field">
+    <%= f.label :date_retired %><br>
+    <%= f.datetime_select :date_retired %>
+  </div>
+  <div class="field">
+    <%= f.label :retire_reason %><br>
+    <%= f.text_field :retire_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

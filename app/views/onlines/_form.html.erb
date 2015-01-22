@@ -1,0 +1,25 @@
+<%= form_for(@online) do |f| %>
+  <% if @online.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@online.errors.count, "error") %> prohibited this online from being saved:</h2>
+
+      <ul>
+      <% @online.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

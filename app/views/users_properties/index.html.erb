@@ -1,0 +1,29 @@
+<h1>Listing users_properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Property</th>
+      <th>Property value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_properties.each do |users_property| %>
+      <tr>
+        <td><%= users_property.user_id %></td>
+        <td><%= users_property.property %></td>
+        <td><%= users_property.property_value %></td>
+        <td><%= link_to 'Show', users_property %></td>
+        <td><%= link_to 'Edit', edit_users_property_path(users_property) %></td>
+        <td><%= link_to 'Destroy', users_property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users property', new_users_property_path %>

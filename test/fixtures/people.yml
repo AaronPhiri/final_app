@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: 
+  birthdate: 2014-12-29
+  birthdate_estimated: 
+  dead: 
+  death_date: 2014-12-29 11:22:27
+  cause_of_death: 
+  creator: 
+  date_created: 2014-12-29 11:22:27
+  changed_by: 
+  date_changed: 2014-12-29 11:22:27
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 11:22:27
+  void_reason: 
+  uuid: 
+
+two:
+  gender: 
+  birthdate: 2014-12-29
+  birthdate_estimated: 
+  dead: 
+  death_date: 2014-12-29 11:22:27
+  cause_of_death: 
+  creator: 
+  date_created: 2014-12-29 11:22:27
+  changed_by: 
+  date_changed: 2014-12-29 11:22:27
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 11:22:27
+  void_reason: 
+  uuid: 

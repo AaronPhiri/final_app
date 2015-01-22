@@ -1,0 +1,81 @@
+<% @page_title ="Tribes with patients graph"%>
+		<div id="show"><h2>A bar graph of tribes with patients</h2></div>
+						<div id="form">
+
+
+<div id="try" style="width:70%; height:70%;background-color:black;"></div>
+<div>
+
+<div id="home">
+
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Count of patients</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tribesall.each do |tribe| %>
+     <% if tribe.patients.count > 0%>
+      <tr>
+       
+        <td class="name"><%= tribe.name %></td>
+        <td><%= tribe.patients.count %></td>
+        
+      </tr>
+    
+     <%end%>
+    <% end %>
+  </tbody>
+</table>
+
+
+</div>
+
+<script type="text/javascript" >
+
+ $(document).ready(function() {
+ alert("hero there");
+   done();
+  $("#home").hide();
+    var chart2 = new Highcharts.Chart(options2);
+   
+});
+
+
+var name = new Array();
+function done(){
+
+$(".name").each(function(){name.push(this.innerHTML)});
+}
+
+
+var options2 =  {
+ 
+        chart: {
+        renderTo : 'try',
+        type: 'column'
+               },
+               
+       title: {
+            text: 'Patients per tribe'
+        },
+    
+       xAxis: {
+ categories:name
+},
+series: [{ name: "Number of patients",data:[<%= @found %>]
+}
+        
+]
+};
+ 
+  
+</script>
+<br>
+<%=button_to("<<Back",getall_tribes_path,:method => "get",:id => "button")%>

@@ -1,0 +1,85 @@
+<%= form_for(@drug) do |f| %>
+  <% if @drug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@drug.errors.count, "error") %> prohibited this drug from being saved:</h2>
+
+      <ul>
+      <% @drug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :drug_id %><br>
+    <%= f.text_field :drug_id %>
+  </div>
+  <div class="field">
+    <%= f.label :concept_id %><br>
+    <%= f.text_field :concept_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :combination %><br>
+    <%= f.text_field :combination %>
+  </div>
+  <div class="field">
+    <%= f.label :dosage_form %><br>
+    <%= f.text_field :dosage_form %>
+  </div>
+  <div class="field">
+    <%= f.label :dosage_strength %><br>
+    <%= f.text_field :dosage_strength %>
+  </div>
+  <div class="field">
+    <%= f.label :maximum_daily_dose %><br>
+    <%= f.text_field :maximum_daily_dose %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_daily_dose %><br>
+    <%= f.text_field :minimum_daily_dose %>
+  </div>
+  <div class="field">
+    <%= f.label :route %><br>
+    <%= f.text_field :route %>
+  </div>
+  <div class="field">
+    <%= f.label :units %><br>
+    <%= f.text_field :units %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br>
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :retired %><br>
+    <%= f.text_field :retired %>
+  </div>
+  <div class="field">
+    <%= f.label :retired_by %><br>
+    <%= f.text_field :retired_by %>
+  </div>
+  <div class="field">
+    <%= f.label :date_retired %><br>
+    <%= f.datetime_select :date_retired %>
+  </div>
+  <div class="field">
+    <%= f.label :retire_reason %><br>
+    <%= f.text_field :retire_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

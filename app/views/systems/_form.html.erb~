@@ -1,0 +1,59 @@
+<%= form_for(@system) do |f| %>
+  <% if @system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@system.errors.count, "error") %> prohibited this system from being saved:</h2>
+
+      <ul>
+      <% @system.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+			<tr>
+				    <th><%= f.label :system_name,("Systeme Name :") %></th>
+		
+				   <td><%= f.text_field :system_name %></td>
+        
+      </tr>
+
+			<tr>
+				    <th> <%= f.label :description,("Description :")%></th>
+		
+				     <td><%= f.text_field :description %></td>
+        
+      </tr>
+
+			
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save System ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+
+  <div class="field">
+    <%= f.label :system_name %><br>
+    <%= f.text_field :system_name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

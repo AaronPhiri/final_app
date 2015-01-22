@@ -1,0 +1,27 @@
+<h1>Listing cohorts_members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cohort</th>
+      <th>Patient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cohorts_members.each do |cohorts_member| %>
+      <tr>
+        <td><%= cohorts_member.cohort_id %></td>
+        <td><%= cohorts_member.patient_id %></td>
+        <td><%= link_to 'Show', cohorts_member %></td>
+        <td><%= link_to 'Edit', edit_cohorts_member_path(cohorts_member) %></td>
+        <td><%= link_to 'Destroy', cohorts_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cohorts member', new_cohorts_member_path %>

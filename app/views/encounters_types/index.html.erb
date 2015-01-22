@@ -1,0 +1,41 @@
+<h1>Listing encounters_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Creator</th>
+      <th>Date created</th>
+      <th>Retired</th>
+      <th>Retired by</th>
+      <th>Date retired</th>
+      <th>Retire reason</th>
+      <th>Uuid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encounters_types.each do |encounters_type| %>
+      <tr>
+        <td><%= encounters_type.name %></td>
+        <td><%= encounters_type.description %></td>
+        <td><%= encounters_type.creator %></td>
+        <td><%= encounters_type.date_created %></td>
+        <td><%= encounters_type.retired %></td>
+        <td><%= encounters_type.retired_by %></td>
+        <td><%= encounters_type.date_retired %></td>
+        <td><%= encounters_type.retire_reason %></td>
+        <td><%= encounters_type.uuid %></td>
+        <td><%= link_to 'Show', encounters_type %></td>
+        <td><%= link_to 'Edit', edit_encounters_type_path(encounters_type) %></td>
+        <td><%= link_to 'Destroy', encounters_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Encounters type', new_encounters_type_path %>

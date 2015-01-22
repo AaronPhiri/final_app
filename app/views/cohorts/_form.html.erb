@@ -1,0 +1,61 @@
+<%= form_for(@cohort) do |f| %>
+  <% if @cohort.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cohort.errors.count, "error") %> prohibited this cohort from being saved:</h2>
+
+      <ul>
+      <% @cohort.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br>
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :voided %><br>
+    <%= f.text_field :voided %>
+  </div>
+  <div class="field">
+    <%= f.label :voided_by %><br>
+    <%= f.text_field :voided_by %>
+  </div>
+  <div class="field">
+    <%= f.label :date_voided %><br>
+    <%= f.datetime_select :date_voided %>
+  </div>
+  <div class="field">
+    <%= f.label :void_reason %><br>
+    <%= f.text_field :void_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :changed_by %><br>
+    <%= f.text_field :changed_by %>
+  </div>
+  <div class="field">
+    <%= f.label :date_changed %><br>
+    <%= f.datetime_select :date_changed %>
+  </div>
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

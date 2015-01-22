@@ -1,0 +1,4 @@
+class Raname < ActiveRecord::Migration
+  def change
+  end
+end

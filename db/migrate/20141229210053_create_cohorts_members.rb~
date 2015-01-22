@@ -1,0 +1,5 @@
+class CreateCohortsMembers < ActiveRecord::Migration
+  def change
+    rename_table("cohort_member","cohorts_members")
+  end
+end

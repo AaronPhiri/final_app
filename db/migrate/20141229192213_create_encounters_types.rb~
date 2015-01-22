@@ -1,0 +1,17 @@
+class CreateEncountersTypes < ActiveRecord::Migration
+  def change
+    create_table :encounters_types do |t|
+      t.varchar :name
+      t.text :description
+      t.int :creator
+      t.datetime :date_created
+      t.smallint :retired
+      t.int :retired_by
+      t.datetime :date_retired
+      t.varchar :retire_reason
+      t.char :uuid
+
+      t.timestamps
+    end
+  end
+end

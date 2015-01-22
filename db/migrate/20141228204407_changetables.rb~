@@ -1,0 +1,6 @@
+class Changetables < ActiveRecord::Migration
+  def change
+      
+       rename_table("role_privilege","roles_privilages")
+  end
+end

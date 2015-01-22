@@ -1,0 +1,9 @@
+<% @page_title ="Edit Location Page"%>
+		<div id="show"><h1>Editing Location</h1></div>
+						<div id="form">
+<%= render 'form' %>
+					</div>
+<div id="backonlocation">
+
+</div>
+

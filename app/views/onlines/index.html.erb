@@ -1,0 +1,27 @@
+<h1>Listing onlines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @onlines.each do |online| %>
+      <tr>
+        <td><%= online.time %></td>
+        <td><%= online.number %></td>
+        <td><%= link_to 'Show', online %></td>
+        <td><%= link_to 'Edit', edit_online_path(online) %></td>
+        <td><%= link_to 'Destroy', delete_online_path(:id => online.id, :method => "delete", :data =>  { confirm: 'Are you sure?' }) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Online', new_online_path %>

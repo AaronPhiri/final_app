@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalApp</title>
+  <%= stylesheet_link_tag    'administrator_page', :media => 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<script src="jquery.1.9.1.min.js" type="text/javascript"></script>
+<script src="highcharts.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="top"><span><h1>Welcome <span id="username"><%= session[:username]%></span>  at <%= @page_title %></h1></span> <%=button_to("Logout",{:controller=>"Access",:action=>"logout"},:id=>"logout")%></div>
+
+<div id="center">
+<% if notice %>
+<p id="notice"><%=notice %></p>
+<% end %>
+<span>
+<%= yield %>
+
+</div>
+
+
+
+</body>
+</html>

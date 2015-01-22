@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tribe: 
+  creator: 
+  date_created: 2014-12-29 19:54:12
+  changed_by: 
+  date_changed: 2014-12-29 19:54:12
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 19:54:12
+  void_reason: 
+
+two:
+  tribe: 
+  creator: 
+  date_created: 2014-12-29 19:54:12
+  changed_by: 
+  date_changed: 2014-12-29 19:54:12
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 19:54:12
+  void_reason: 

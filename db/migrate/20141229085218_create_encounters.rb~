@@ -1,0 +1,6 @@
+class CreateEncounters < ActiveRecord::Migration
+  def change
+    rename_table("encounter","encounters")
+    end
+  end
+end

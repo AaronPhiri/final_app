@@ -1,0 +1,94 @@
+class PatientsController < ApplicationController
+  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+layout "patients"
+  # GET /patients
+  # GET /patients.json
+  def index
+ 		@active = User.find(session[:user_id]).try :touch
+    @patients = Patient.all.paginate(page: params[:page], per_page: 12)
+  end
+
+  # GET /patients/1
+  # GET /patients/1.json
+  def show
+ 				@active = User.find(session[:user_id]).try :touch
+  end
+
+  # GET /patients/new
+  def new
+				@active = User.find(session[:user_id]).try :touch
+				@patient = Patient.new
+				@tribes = Tribe.all
+  end
+
+  # GET /patients/1/edit
+  def edit
+				@active = User.find(session[:user_id]).try :touch
+				@tribes = Tribe.all
+  end
+
+  # POST /patients
+  # POST /patients.json
+  def create
+ 				@active = User.find(session[:user_id]).try :touch
+    		@patient = Patient.new(patient_params)
+   			@patient.date_created = Time.now
+				@patient.creator= session[:user_id]
+				@patient.save
+
+    respond_to do |format|
+      if @patient.save
+        format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+        format.json { render :show, status: :created, location: @patient }
+      else
+        format.html { render :new }
+        format.json { render json: @patient.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /patients/1
+  # PATCH/PUT /patients/1.json
+  def update
+ 				@active = User.find(session[:user_id]).try :touch
+				@patient.update(user_params)
+				@tribes = Tribe.all
+				@patient.changed_by = session[:user_id]
+				@patient.date_changed = Time.now
+    if 	@patient.retired == "YES"
+       	@patient.retired_by = session[:user_id]
+    end
+     		@patient.save
+    respond_to do |format|
+      if @patient.update(patient_params)
+        format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
+        format.json { render :show, status: :ok, location: @patient }
+      else
+        format.html { render :edit }
+        format.json { render json: @patient.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /patients/1
+  # DELETE /patients/1.json
+  def destroy
+ 		@active = User.find(session[:user_id]).try :touch
+    @patient.destroy
+    respond_to do |format|
+      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_patient
+      @patient = Patient.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def patient_params
+      params.require(:patient).permit(:tribe, :creator, :date_created, :changed_by, :date_changed, :voided, :voided_by, :date_voided, :void_reason)
+    end
+end

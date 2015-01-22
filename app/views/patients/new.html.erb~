@@ -1,0 +1,11 @@
+<h1>New patient</h1>
+
+<%= render 'form' %>
+
+<% @page_title ="Create Patient Page"%>
+<div id="show"><h1> create New Patient</h1></div>
+<div>
+<div id="form">
+			<%= render 'form' %>
+</div>
+</br>

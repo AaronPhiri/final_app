@@ -1,0 +1,16 @@
+<% @page_title ="Edit Tribe Page"%>
+		<div id="show"><h1>Editing Tribe</h1></div>
+						<div id="form">
+
+<%= render 'form' %>
+					</div>
+<div id="back">
+<table>
+<tr>
+						<td><%=button_to("<<Back",tribes_path,:method => "get",:id => "button")%></td>
+						<td><%=button_to("Show", @tribe,:method => "get",:id => "button")%></td>
+						
+			</tr>
+</table>
+</div>
+

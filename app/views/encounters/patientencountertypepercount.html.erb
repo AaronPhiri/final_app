@@ -1,0 +1,37 @@
+<% @page_title = "location with encounter count List Page"%>
+
+
+<div id ="show"><h1>Listing location  with number of encounters incountered</h1></div>
+<div id="users">
+<table>
+  <thead>
+    <tr id="userheader">
+     
+      <th>patient_id</th>
+      <th>Type of encounter</th>
+      <th>count</th>
+     
+      
+      
+      
+      
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encountertype.each do |r| %>
+      <tr class="<%=cycle('old','even')%>">
+        
+        <td><%= r.patient_id %></td>
+        <td><%= r.name %></td>
+        <td><%= r.count %></td>
+        
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

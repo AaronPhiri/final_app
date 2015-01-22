@@ -1,0 +1,36 @@
+<% @page_title = "Encounter type with count List Page"%>
+
+
+<div id ="show"><h1>Listing Encounter types with number of encounters in our system</h1></div>
+<div id="users">
+<table>
+  <thead>
+    <tr id="userheader">
+     
+      <th>Person_id</th>
+      <th>count</th>
+     
+      
+      
+      
+      
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encountertype.each do |r| %>
+      <tr class="<%=cycle('old','even')%>">
+        
+        <td><%= r.person_id %></td>
+        
+        <td><%= r.count %></td>
+        
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

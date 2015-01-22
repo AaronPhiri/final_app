@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @encounters_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @encounters_type.description %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @encounters_type.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @encounters_type.date_created %>
+</p>
+
+<p>
+  <strong>Retired:</strong>
+  <%= @encounters_type.retired %>
+</p>
+
+<p>
+  <strong>Retired by:</strong>
+  <%= @encounters_type.retired_by %>
+</p>
+
+<p>
+  <strong>Date retired:</strong>
+  <%= @encounters_type.date_retired %>
+</p>
+
+<p>
+  <strong>Retire reason:</strong>
+  <%= @encounters_type.retire_reason %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @encounters_type.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_encounters_type_path(@encounters_type) %> |
+<%= link_to 'Back', encounters_types_path %>

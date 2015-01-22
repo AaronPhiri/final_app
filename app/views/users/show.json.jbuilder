@@ -1,0 +1,1 @@
+json.extract! @user, :id, :system_id, :username, :password_digest, :secret_question, :secret_answer, :creator, :date_created, :changed_by, :date_changed, :person_id, :retired, :retired_by, :date_retired, :retire_reason, :uuid, :created_at, :updated_at

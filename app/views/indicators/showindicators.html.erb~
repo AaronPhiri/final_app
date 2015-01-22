@@ -1,0 +1,612 @@
+<% @page_title = "indicators  Page"%>
+<div id="users">
+<div id="accordion">
+		<h3>Online  users per time</h3>
+							<div>
+											<div id="online" style="width:90%; height:90%;background-color:white;">
+											</div>
+											<div class="hide">						
+													<table>
+																<thead>
+																	<tr id="userheader">
+																		<th>Name of system</th>
+																		<th>Count</th>
+				
+																	</tr>
+																</thead>
+
+																<tbody>
+																	<% @online.each do |user| %>
+																			<tr class="<%=cycle('old','even')%>">
+																						<td class="onlinename"><%= user.time %></td>
+																						<td class="onlinecount"><%= user.number %></td>
+								
+																			</tr>
+																	<% end %>
+																</tbody>
+													</table>
+											</div>	
+							</div>
+			<h3>Users  available </h3>
+							<div>
+								
+											<div id="try" style="width:90%; height:90%;background-color:white;"></div>
+
+						
+							</div>
+
+			<h3>Users on system </h3>
+							<div>
+											<p>						
+														<div id="belong" style="width:100%; height:100%;background-color:white;">
+														</div>
+
+
+														<div class="hide">						
+																						<table>
+																											<thead>
+																																<tr id="userheader">
+																																	<th>Name of system</th>
+																																	<th>Count</th>
+				
+																																</tr>
+																											</thead>
+
+																											<tbody>
+																														<% @users.each do |user| %>
+																																	<tr class="<%=cycle('old','even')%>">
+																																					<td class="systemname"><%= user.system_name %></td>
+																																					<td class="systemcount"><%= user.count %></td>
+								
+																																	</tr>
+																														<% end %>
+																											</tbody>
+																						</table>
+													</div>	
+		
+											</p>								
+							</div>
+
+					<h3>Patients on tribe</h3>
+																<div>
+																<div id="tribe" style="width:100%; height:100%;background-color:white;">
+																</div>
+																<div class="hide">
+																									<table>
+																															<thead>
+																																			<tr> 
+																																						<th>Name</th>
+																																						<th>Count of patients</th>
+																																			</tr>
+																															</thead>
+																															<tbody>
+																																	<% @tribes.each do |tribe| %>
+																																	 <% if tribe.patients.count > 0%>
+																																		<tr>
+																																		 
+																																			<td class="nameoftribe"><%= tribe.name %></td>
+																																			<td class="countofpatients"><%= tribe.patients.count %></td>
+																																		</tr>
+																																	 <%end%>
+																																	<% end %>
+																															</tbody>
+																									</table>
+																</div>
+																</div>
+
+					<h3>Patients on location </h3>
+														<div>
+																				<div id="patientsonlocation" style="width:100%; height:100%;background-color:white;">
+																				</div>
+																				<div class="hide">
+																												<table>
+																																<thead>
+																																		<tr id="userheader">
+																																		 
+																																				<th>Person_id</th>
+																																				<th>count</th>
+																																		</tr>
+																																</thead>
+
+																																<tbody>
+																																	<% @encountertype1.each do |r| %>
+																																		<tr class="<%=cycle('old','even')%>">
+																																			<td class="nameoflocation"><%= r.name %></td>
+																																			<td class="countofpatientsonlocation"><%= r.count %></td>
+																																		</tr>
+																																	<% end %>
+																																</tbody>
+																												</table>
+																				</div>					
+														</div>
+				
+							<h3>service providers and totals </h3>
+											<div>
+																<div id="provider" style="width:90%; height:90%;background-color:white;">
+																</div>
+																<div class="hide">
+																									<table>
+																													<thead>
+																																<tr id="userheader">
+																																		<th>Person_id</th>
+																																		<th>count</th>
+																																</tr>
+																													</thead>
+																													<tbody>
+																															<% @encountertype2.each do |r| %>
+																																	<tr class="<%=cycle('old','even')%>">
+																																				<td class="nameofprovider"><%= r.person_id %></td>
+																																				<td class="countofproviderincounters"><%= r.count %></td>
+																																	</tr>
+																															<% end %>
+																													</tbody>
+																									</table>
+																</div>				
+											</div>
+
+				<h3>EncounterTypes and totals  </h3>
+								<div>
+												<div id="encountertype" style="width:90%; height:90%;background-color:white;">
+												</div>
+												<div class="hide">
+															<table>
+																		<thead>
+																					<tr id="userheader">
+																								<th>Name</th>
+																								<th>count</th>
+																					</tr>
+																		</thead>
+																		<tbody>
+																					<% @encountertype3.each do |r| %>
+																								<tr class="<%=cycle('old','even')%>">      
+																											<td class="encountertypename"><%= r.name %></td>
+																											<td class="encountertypecount"><%= r.count %></td>
+																								</tr>
+																					<% end %>
+																		</tbody>
+															</table>
+												</div>					
+								</div>
+					<h3>Most Users of system </h3>
+										<div>					
+													<div class="hike">						
+																		<table>
+																							<thead>
+																											<tr id="userheader">
+																														<th>Name of User</th>
+																														<th>Number of incounters created</th>    
+																											</tr>
+																							</thead>
+																							<tbody>
+																										<% @users2.each do |user| %>
+																													<tr class="<%=cycle('old','even')%>">
+																																<td class="user2name"><%= user.username %></td>
+																																<td class="getcount2"><%= user.count %></td>    
+																													</tr>
+																							<% end %>
+																							</tbody>
+																		</table>
+													</div>					
+										</div>
+			<h3>Most Users of system </h3>
+					<div>					
+					</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+ <script>
+$(function() {
+$( "#accordion" ).accordion();
+});
+
+
+$(function () {
+    $('#try').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 1,//null,
+            plotShadow: false
+        },
+        title: {
+            text: 'USERS RETIRED AND NOT RETIRED IN THE SYSTEM :'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Percentage share',
+            data: [
+                ['Not retired Users',   <%= @usernotretired%>],
+                ['Retired Users',      <%= @userretired%>]
+               
+            ]
+        }]
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function () {
+var name = new Array();
+var count = new Array();
+
+$(".systemname").each(function(){name.push(this.innerHTML)});
+$(".systemcount").each(function(){count.push(parseInt(this.innerHTML))});
+
+
+    $('#belong').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Users based on system they belong'
+        },
+        xAxis: {
+            categories: name
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Users'
+            }
+        }, {
+            title: {
+                text: 'Numbers'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of Users ',
+            color: 'rgba(165,170,217,1)',
+            data: count,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+
+
+$(function () {
+//patients based on tribe
+var nameoftribe = new Array();
+var countofpatients = new Array();
+
+$(".nameoftribe ").each(function(){nameoftribe.push(this.innerHTML)});
+$(".countofpatients").each(function(){countofpatients.push(parseInt(this.innerHTML))});
+
+
+    $('#tribe').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'patients based on tribe'
+        },
+        xAxis: {
+            categories: nameoftribe
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Number of patients'
+            }
+        }, {
+            title: {
+                text: 'Number'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of patients ',
+            color: 'rgba(165,170,217,1)',
+            data: countofpatients,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+$(function () {
+//patients based on location
+var nameoflocation = new Array();
+var countofpatientsonlocation = new Array();
+
+$(".nameoflocation  ").each(function(){nameoflocation .push(this.innerHTML)});
+$(".countofpatientsonlocation").each(function(){countofpatientsonlocation.push(parseInt(this.innerHTML))});
+
+
+    $('#patientsonlocation').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'patients based on Location'
+        },
+        xAxis: {
+            categories: nameoflocation 
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Number of patients'
+            }
+        }, {
+            title: {
+                text: 'Number'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of patients ',
+            color: 'rgba(165,170,217,1)',
+            data: countofpatientsonlocation,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+
+
+$(function () {
+//service providers and totals
+var nameofprovider = new Array();
+var countofproviderincounters = new Array();
+
+$(".nameofprovider  ").each(function(){nameofprovider .push(this.innerHTML)});
+$(".countofproviderincounters").each(function(){countofproviderincounters.push(parseInt(this.innerHTML))});
+
+
+    $('#provider').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Number of encounters based on the provider'
+        },
+        xAxis: {
+            categories: nameofprovider 
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Number of patients serviced'
+            }
+        }, {
+            title: {
+                text: ''
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of patients  ',
+            color: 'rgba(165,170,217,1)',
+            data: countofproviderincounters,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+$(function () {
+//encountertypes  with  totals
+var encountertypename = new Array();
+var encountertypecount = new Array();
+
+$(".encountertypename  ").each(function(){encountertypename .push(this.innerHTML)});
+$(".encountertypecount").each(function(){encountertypecount.push(parseInt(this.innerHTML))});
+
+
+    $('#encountertype').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Number of encounters based on EncounterType'
+        },
+        xAxis: {
+            categories:encountertypename 
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Number of encounters'
+            }
+        }, {
+            title: {
+                text: 'Number of encounters'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of Encounters',
+            color: 'rgba(165,170,217,1)',
+            data: encountertypecount,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+
+
+
+
+
+$(function () {
+//online users per time
+var onlinename = new Array();
+var onlinecount = new Array();
+
+$(".onlinename  ").each(function(){onlinename.push(this.innerHTML)});
+$(".onlinecount").each(function(){onlinecount.push(parseInt(this.innerHTML))});
+
+
+    $('#online').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Number users online at present'
+        },
+        xAxis: {
+            categories:onlinename 
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Users online'
+            }
+        }, {
+            title: {
+                text: 'users online'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Number of users online ',
+            color: 'rgba(165,170,217,1)',
+            data: onlinecount,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+
+
+
+</script>

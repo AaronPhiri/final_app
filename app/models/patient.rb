@@ -1,0 +1,30 @@
+class Patient < ActiveRecord::Base
+belongs_to :person
+belongs_to :tribe
+belongs_to :user
+
+
+
+has_many :orders
+has_many :encounters
+
+validates :tribe, :length => { :maximum => 11}
+validates :creator, :presence => true,
+                    :length => { :maximum => 11}
+                   
+validates :date_created, :presence => true
+                    
+validates :changed_by, :length => { :maximum => 11}
+                    
+
+validates :voided, :presence => true,
+                    :length => { :maximum => 6}
+                   
+validates :voided_by,  :length => { :maximum => 11}
+                   
+validates :void_reason, :length => { :maximum => 255}
+                        
+
+                    
+
+end

@@ -1,0 +1,179 @@
+<% @page_title = "Users Summary Page"%>
+
+
+<div id ="show"><h1>Listing users summary</h1></div>
+<div id="users">
+
+
+<div id="accordion">
+<h3>Total users</h3>
+<div>
+<p>
+									
+									 In the system we have :<%= @usercount %> users.
+		</p>							
+</div>
+<h3>Retired and not retired users </h3>
+<div>
+		<p>							
+									<div id="try" style="width:50%; height:70%;background-color:white;"></div>
+
+	<p>								
+</div>
+<h3>Based on system a user belong </h3>
+<div>
+		<p>						
+<div id="belong" style="width:50%; height:60%;background-color:white;"></div>
+
+
+	<div class="hide">						
+							<table>
+  <thead>
+    <tr id="userheader">
+      <th>Name of system</th>
+      <th>Count</th>
+    
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr class="<%=cycle('old','even')%>">
+        <td class="systemname"><%= user.system_name %></td>
+        <td class="systemcount"><%= user.count %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table></div>	
+		
+</p>									
+</div>
+<h3>Section 4</h3>
+<div>
+							
+</div>
+</div>
+</div>
+
+ <script>
+$(function() {
+
+$( "#accordion" ).accordion();
+});
+
+
+$(function () {
+    $('#try').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 1,//null,
+            plotShadow: false
+        },
+        title: {
+            text: 'USERS RETIRED AND NOT RETIRED IN THE SYSTEM :'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'User share',
+            data: [
+                ['Not retired Users',   <%= @usernotretired%>],
+                ['Retired Users',      <%= @userretired%>]
+               
+            ]
+        }]
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(function () {
+var name = new Array();
+var count = new Array();
+
+$(".systemname").each(function(){name.push(this.innerHTML)});
+$(".systemcount").each(function(){count.push(parseInt(this.innerHTML))});
+
+
+    $('#belong').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Efficiency Optimization by Branch'
+        },
+        xAxis: {
+            categories: name
+                
+            
+        },
+        yAxis: [{
+            min: 0,
+            title: {
+                text: 'Employees'
+            }
+        }, {
+            title: {
+                text: 'Profit (millions)'
+            },
+            opposite: true
+        }],
+        legend: {
+            shadow: false
+        },
+        tooltip: {
+            shared: true
+        },
+        plotOptions: {
+            column: {
+                grouping: false,
+                shadow: false,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Employees',
+            color: 'rgba(165,170,217,1)',
+            data: count,
+            pointPadding: 0.3,
+            pointPlacement: -0.2
+        }
+       ]
+    });
+});
+
+
+
+
+
+
+
+
+
+</script>

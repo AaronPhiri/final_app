@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order type:</strong>
+  <%= @order.order_type_id %>
+</p>
+
+<p>
+  <strong>Concept:</strong>
+  <%= @order.concept_id %>
+</p>
+
+<p>
+  <strong>Orderer:</strong>
+  <%= @order.orderer %>
+</p>
+
+<p>
+  <strong>Encounter:</strong>
+  <%= @order.encounter_id %>
+</p>
+
+<p>
+  <strong>Instructions:</strong>
+  <%= @order.instructions %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @order.start_date %>
+</p>
+
+<p>
+  <strong>Auto expire date:</strong>
+  <%= @order.auto_expire_date %>
+</p>
+
+<p>
+  <strong>Discontinued:</strong>
+  <%= @order.discontinued %>
+</p>
+
+<p>
+  <strong>Discontinued date:</strong>
+  <%= @order.discontinued_date %>
+</p>
+
+<p>
+  <strong>Discontinued by:</strong>
+  <%= @order.discontinued_by %>
+</p>
+
+<p>
+  <strong>Discontinued reason:</strong>
+  <%= @order.discontinued_reason %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @order.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @order.date_created %>
+</p>
+
+<p>
+  <strong>Voided:</strong>
+  <%= @order.voided %>
+</p>
+
+<p>
+  <strong>Voided by:</strong>
+  <%= @order.voided_by %>
+</p>
+
+<p>
+  <strong>Date voided:</strong>
+  <%= @order.date_voided %>
+</p>
+
+<p>
+  <strong>Void reason:</strong>
+  <%= @order.void_reason %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @order.patient_id %>
+</p>
+
+<p>
+  <strong>Accession number:</strong>
+  <%= @order.accession_number %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @order.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -1,0 +1,6 @@
+class Change < ActiveRecord::Migration
+  def change
+    remove_column("systems","description")
+    add_column("systems","description",:text,:limit => 50)
+  end
+end

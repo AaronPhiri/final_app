@@ -1,0 +1,93 @@
+<% @page_title ="User Show Page"%>
+
+<div id="show"><h1>Showing the User</h1></div>
+
+
+<div id="form">
+<% if adduser %>
+<p id="notice"><%= adduser %></p>
+<% end %>
+<p>
+  <strong>System:</strong>
+  <%= @user.system_id %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Secret question:</strong>
+  <%= @user.secret_question %>
+</p>
+
+<p>
+  <strong>Secret answer:</strong>
+  <%= @user.secret_answer %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @user.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @user.date_created %>
+</p>
+
+<p>
+  <strong>Changed by:</strong>
+  <%= @user.changed_by %>
+</p>
+
+<p>
+  <strong>Date changed:</strong>
+  <%= @user.date_changed %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @user.person_id %>
+</p>
+
+<p>
+  <strong>Retired:</strong>
+  <%= @user.retired %>
+</p>
+
+<p>
+  <strong>Retired by:</strong>
+  <%= @user.retired_by %>
+</p>
+
+<p>
+  <strong>Date retired:</strong>
+  <%= @user.date_retired %>
+</p>
+
+<p>
+  <strong>Retire reason:</strong>
+  <%= @user.retire_reason %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @user.uuid %>
+</p>
+</div>
+		<div id="backonshow">
+		<table>
+		<tr>
+								<td><%=button_to("Edit",edit_user_path(@user),:method => "get",:id => "button")%></td>
+								<td><%=button_to("<<Back",users_path,:method => "get",:id => "button")%></td>
+					</tr>
+		</table>
+		</div>
+

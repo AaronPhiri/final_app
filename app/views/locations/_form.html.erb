@@ -1,0 +1,155 @@
+
+<div id="wholeform">
+<div id="form">
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+      <tr>
+				    <th> <%= f.label :name,("Name of Location :") %></th>
+		
+				    <td><%= f.text_field :name  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :description,("Description:") %></th>
+		
+				    <td><%= f.text_field :description %></td>
+        
+      </tr>
+			<tr>
+				    <th><%= f.label :region ,("region :") %></th>
+		
+				    <td><%= f.select(:region,["Northern region","Central region","Southren region"])  %></td>
+        
+      </tr>
+<tr>
+				    <th><%= f.label :country_district,("Country District	:") %></th>
+		
+				    <td><%= f.text_field :country_district %></td>
+        
+      </tr>
+<tr>
+				    <th><%= f.label :subregion,("subregion:") %></th>
+		
+				    <td><%= f.select(:subregion,["N","S","E","W","NE","NW","SE","SW"])%></td>
+        
+      </tr>
+
+
+<tr>
+				    <th><%= f.label :parent_location,("parent_location:") %></th>
+		
+				    <td><%= f.text_field :parent_location %></td>
+        
+      </tr>
+
+
+
+
+
+
+			<tr>
+				    <th><%= f.label :address1,("Address1		:") %></th>
+		
+				    <td> <%= f.text_field :address1 %></td>
+        
+      </tr>
+
+   		<tr>
+				    <th><%= f.label :address2,("Address2		:") %></th>
+		
+				    <td><%= f.text_field :address2 %></td>
+        
+      </tr>
+ 
+   		<tr>
+				    <th><%= f.label :city_village,("Village Name	:") %></th>
+		
+				    <td><%= f.text_field :city_village %></td>
+        
+      </tr>
+
+<tr>
+				    <th><%= f.label :neighborhood_cell,("neighborhood_cell	:") %></th>
+		
+				    <td><%= f.text_field :neighborhood_cell %></td>
+        
+      </tr>
+ 
+  
+   		<tr>
+				    <th><%= f.label :latitude,("Latitude :") %></th>
+		
+				    <td><%= f.text_field :latitude %></td>
+        
+      </tr>
+   
+   		
+
+
+			<tr>
+				    <th><%= f.label :longitude,("Person Name :") %></th>
+		
+				    <td><%= f.text_field :longitude  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th> <%= f.label :retired,("Retired :")%></th>
+		
+				    <td><%= f.select(:retired,{"NO" => "0","YES" => "1"})%></td>
+        
+      </tr>
+
+			
+
+
+			<tr>
+				    <th><%= f.label :retire_reason,("Retire Reason :") %></th>
+		 
+				    <td><%= f.text_field :retire_reason %></td>
+   
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :uuid,("UUID:") %></th>
+		
+				    <td><%= f.text_field :uuid %></td>
+        
+      </tr>
+
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save User ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+<% end %>
+</div>
+
+</div>
+</div>
+

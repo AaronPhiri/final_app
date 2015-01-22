@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Privilege:</strong>
+  <%= @privilege.privilege %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @privilege.description %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @privilege.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_privilege_path(@privilege) %> |
+<%= link_to 'Back', privileges_path %>

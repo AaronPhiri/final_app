@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_type_id: 
+  concept_id: 
+  orderer: 
+  encounter_id: 
+  instructions: MyText
+  start_date: 2014-12-29 17:42:14
+  auto_expire_date: 2014-12-29 17:42:14
+  discontinued: 
+  discontinued_date: 2014-12-29 17:42:14
+  discontinued_by: 
+  discontinued_reason: 
+  creator: 
+  date_created: 2014-12-29 17:42:14
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 17:42:14
+  void_reason: 
+  patient_id: 
+  accession_number: 
+  uuid: 
+
+two:
+  order_type_id: 
+  concept_id: 
+  orderer: 
+  encounter_id: 
+  instructions: MyText
+  start_date: 2014-12-29 17:42:14
+  auto_expire_date: 2014-12-29 17:42:14
+  discontinued: 
+  discontinued_date: 2014-12-29 17:42:14
+  discontinued_by: 
+  discontinued_reason: 
+  creator: 
+  date_created: 2014-12-29 17:42:14
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 17:42:14
+  void_reason: 
+  patient_id: 
+  accession_number: 
+  uuid: 

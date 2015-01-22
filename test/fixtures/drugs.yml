@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drug_id: 
+  concept_id: 
+  name: 
+  combination: 
+  dosage_form: 
+  dosage_strength: 
+  maximum_daily_dose: 
+  minimum_daily_dose: 
+  route: 
+  units: 
+  creator: 
+  date_created: 2014-12-29 23:19:36
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 23:19:36
+  retire_reason: 
+  uuid: 
+
+two:
+  drug_id: 
+  concept_id: 
+  name: 
+  combination: 
+  dosage_form: 
+  dosage_strength: 
+  maximum_daily_dose: 
+  minimum_daily_dose: 
+  route: 
+  units: 
+  creator: 
+  date_created: 2014-12-29 23:19:36
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 23:19:36
+  retire_reason: 
+  uuid: 

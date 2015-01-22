@@ -1,0 +1,65 @@
+<% @page_title = " Baobab Data Analyzer User Login page"%>
+
+<div id="accesslogin">
+<%= form_tag(:action =>"attempt_login") do %>
+					<table>
+								<tr>
+										<th id="accesslabel"><%= label_tag(:username)%></th>
+										<td><%= text_field_tag(:username)%></td>
+								</tr>
+					
+								<tr>
+										<th id="accesslabel"><%=label_tag(:password)%></th>
+										<td><%=password_field_tag%></td>
+								</tr>
+								<tr>
+										<td><%=submit_tag("Log in",:class => "accessloginbutton")%></td>
+										<td><%= button_to("Forgot password",{},:class => "accessloginbutton")%></td>
+								</tr>
+
+					</table>
+<% end %>
+</div>
+
+
+<div class="hide">
+
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Count  </th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+     
+      <tr>
+       
+        <td class="name"><%= user.username %></td>
+        
+        
+      </tr>
+    
+    
+    <% end %>
+  </tbody>
+</table>
+
+
+</div>
+
+ <script>
+$(function() {
+var name = new Array();
+$(".name").each(function(){name.push(this.innerHTML)})
+
+$( "#username" ).autocomplete({
+source: name
+});
+});
+</script>

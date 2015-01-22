@@ -1,0 +1,97 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :order_type_id %><br>
+    <%= f.text_field :order_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :concept_id %><br>
+    <%= f.text_field :concept_id %>
+  </div>
+  <div class="field">
+    <%= f.label :orderer %><br>
+    <%= f.text_field :orderer %>
+  </div>
+  <div class="field">
+    <%= f.label :encounter_id %><br>
+    <%= f.text_field :encounter_id %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.datetime_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :auto_expire_date %><br>
+    <%= f.datetime_select :auto_expire_date %>
+  </div>
+  <div class="field">
+    <%= f.label :discontinued %><br>
+    <%= f.text_field :discontinued %>
+  </div>
+  <div class="field">
+    <%= f.label :discontinued_date %><br>
+    <%= f.datetime_select :discontinued_date %>
+  </div>
+  <div class="field">
+    <%= f.label :discontinued_by %><br>
+    <%= f.text_field :discontinued_by %>
+  </div>
+  <div class="field">
+    <%= f.label :discontinued_reason %><br>
+    <%= f.text_field :discontinued_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :creator %><br>
+    <%= f.text_field :creator %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br>
+    <%= f.datetime_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :voided %><br>
+    <%= f.text_field :voided %>
+  </div>
+  <div class="field">
+    <%= f.label :voided_by %><br>
+    <%= f.text_field :voided_by %>
+  </div>
+  <div class="field">
+    <%= f.label :date_voided %><br>
+    <%= f.datetime_select :date_voided %>
+  </div>
+  <div class="field">
+    <%= f.label :void_reason %><br>
+    <%= f.text_field :void_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :patient_id %><br>
+    <%= f.text_field :patient_id %>
+  </div>
+  <div class="field">
+    <%= f.label :accession_number %><br>
+    <%= f.text_field :accession_number %>
+  </div>
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

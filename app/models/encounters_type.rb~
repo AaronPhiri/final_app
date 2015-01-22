@@ -1,0 +1,23 @@
+class EncountersType < ActiveRecord::Base
+has_many :encounters
+validates :name, :presence => true,
+                 :length => { :maximum => 50}
+validates :creator, :presence => true,
+                 :length => { :maximum => 11}
+validates :date_created, :presence => true
+validates :retired, :presence => true,
+                 :length => { :maximum => 6}
+validates :retired_by, :length => { :maximum => 11}
+validates :retire_reason, :length => { :maximum => 255}
+validates :uuid, :presence => true,
+                 :length => { :maximum => 38}
+
+
+
+
+
+                 
+
+
+
+end

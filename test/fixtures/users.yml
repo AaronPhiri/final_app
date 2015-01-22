@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  system_id: 
+  username: 
+  password_digest: 
+  secret_question: 
+  secret_answer: 
+  creator: 
+  date_created: 2014-12-29 10:13:08
+  changed_by: 
+  date_changed: 2014-12-29 10:13:08
+  person_id: 
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 10:13:08
+  retire_reason: 
+  uuid: 
+
+two:
+  system_id: 
+  username: 
+  password_digest: 
+  secret_question: 
+  secret_answer: 
+  creator: 
+  date_created: 2014-12-29 10:13:08
+  changed_by: 
+  date_changed: 2014-12-29 10:13:08
+  person_id: 
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 10:13:08
+  retire_reason: 
+  uuid: 

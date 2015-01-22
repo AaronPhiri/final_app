@@ -1,0 +1,23 @@
+class CreatePeople < ActiveRecord::Migration
+  def change
+    create_table :people do |t|
+      t.varchar :gender
+      t.date :birthdate
+      t.smallint :birthdate_estimated
+      t.smallint :dead
+      t.datetime :death_date
+      t.int :cause_of_death
+      t.int :creator
+      t.datetime :date_created
+      t.int :changed_by
+      t.datetime :date_changed
+      t.smallint :voided
+      t.int :voided_by
+      t.datetime :date_voided
+      t.varchar :void_reason
+      t.char :uuid
+
+      t.timestamps
+    end
+  end
+end

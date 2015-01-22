@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalApp</title>
+  <%= stylesheet_link_tag('users', :media => 'all') %>
+  <%=javascript_include_tag('application')%>
+  <%= csrf_meta_tags %>
+
+<script src="jquery.js" type="text/javascript"></script>
+<script src="jquery-ui.js" type="text/javascript"></script>
+<script src="highcharts.js" type="text/javascript"></script>
+
+</head>
+<body id="body">
+<div id="top"><span><h1>Welcome <span id="username"><%= session[:username]%></span>  at <%= @page_title %></h1></span> <%=button_to("Logout",{:controller=>"Access",:action=>"logout"},:id=>"logout")%></div>
+<div id="whole">
+<div id="nav">
+<table>
+
+<tr><td><%=button_to("List All Users",users_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Retired Users",retired_users_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Not Retired Users",notretired_users_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Add system",new_system_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Add Users",new_user_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("search Users",getnametosearch_users_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Go to indicators",indicators_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("<<Back",administrator_page_index_path,:method => "get",:id => "button")%></td></tr>
+</table>
+
+</div>
+<div id="content">
+
+
+<%= yield %>
+</div>
+
+
+
+</div>
+
+
+</body>
+</html>

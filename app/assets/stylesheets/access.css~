@@ -1,0 +1,134 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *
+ *
+ *= require jquery-ui
+ *= require_self
+ */
+#accessbody{
+width:100%;
+border: 1px solid red;
+height: 900px;
+position:relative;
+}
+
+#accesslogin{
+width:500px;
+height:200px;
+
+position:relative;
+background-color:#6B8E23;
+top:150px;
+left:12px;
+border-radius:21px;
+}
+#accesslogin table tr{
+margin:30px;
+padding:60px;
+}
+table{
+position:absolute;
+}
+#accesslabel{
+font-size:30px;
+font-weight:bold;
+}
+input[id="username"]{
+height:40px;
+background-color:white;
+border-radius:10px;
+}
+input[id="password"]{
+height:40px;
+background-color:white;
+border-radius:10px;
+opacity:0.94;
+}
+input[class="accessloginbutton"]{
+height:60px;
+width:150px;
+}
+#accesstop{
+height: 50px;
+border:2px solid #857695;
+background-color: #2E8B57;
+text-align:center;
+font-size:25px;
+border-bottom:1px solid yellow;
+}
+
+#accessleft{
+width:20%;
+height:800px;
+background-color:#EEE8AA;
+
+position: relative;
+}
+#accessright{
+width:20%;
+height:800px;
+background-color:#EEE8AA;
+border-top:1px solid yellow;
+
+position: relative;
+float:right;
+top:-1601px;
+}
+
+#accesscenter{
+height:800px;
+width:60%;
+border-bottom:1px solid yellow;
+
+position:relative;
+top:-800px;
+left:20%;
+background-color:#EEE8AA;
+
+}
+#accessbottom{
+height: 49px;
+position:relative;
+top:-2px;
+border-top:1px solid yellow;
+
+background-color: #2E8B57;
+}
+#accessaccess{
+width:100%;
+height:800px;
+border:1px solid #333333;
+position:relative;
+border-bottom:1px solid yellow;
+
+
+}
+
+p{
+
+margin:1px;
+padding:0;
+}
+li{
+ display:block;
+ background-color:white;
+ width:80px;
+
+}
+
+.hide{
+display:none;
+
+}
+#notice{color:red;
+text-align:center;}

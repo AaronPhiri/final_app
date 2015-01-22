@@ -1,0 +1,60 @@
+<%= form_for(@tribe) do |f| %>
+  <% if @tribe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tribe.errors.count, "error") %> prohibited this tribe from being saved:</h2>
+
+      <ul>
+      <% @tribe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+      <tr>
+				    <th> <%= f.label :retired,("Retired :") %></th>
+		
+				    <td><%= f.select(:retired,{"NO" => "0","YES" => "1"})  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :name,("Name of Tribe :") %></th>
+		
+				    <td><%= f.text_field :name %></td>
+        
+      </tr>
+
+
+			
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save User ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+
+  <div class="field">
+    <%= f.label :retired %><br>
+    <%= f.text_field :retired %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

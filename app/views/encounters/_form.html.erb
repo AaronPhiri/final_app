@@ -1,0 +1,104 @@
+<div id="wholeform">
+<div id="form">
+<%= form_for(@encounter) do |f| %>
+  <% if @encounter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounter.errors.count, "error") %> prohibited this encounter from being saved:</h2>
+
+      <ul>
+      <% @encounter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+ 
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+      <tr>
+				    <th> <%= f.label :encounter_type,("Encounter_Type :") %></th>
+		
+				    <td> <%= f.select(:encounter_type,@encounter_type.map{|p| [p.name,p.id]})  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :patient_id,("patient_id:") %></th>
+		
+				    <td> <%= f.select(:patient_id,@patients.map{|p| [p.patient_id,p.patient_id]})  %></td>
+        
+      </tr>
+
+
+  
+			<tr>
+				    <th><%= f.label :provider_id,("provider_id		:") %></th>
+		
+				    <td> <%= f.select(:provider_id,@people.map{|p| [p.person_id,p.person_id]})  %></td>
+        
+      </tr>
+
+   		<tr>
+				    <th><%= f.label :location_id,("location		:") %></th>
+		
+				    <td><%= f.select(:location_id,@locations.map{|p| [p.name,p.id]})  %></td>
+        
+      </tr>
+ 
+   		
+
+    
+   		<tr>
+				    <th><%= f.label :encounter_datetime,("encounter_datetime :") %></th>
+		
+				    <td><%=  f.datetime_select :encounter_datetime %></td>
+        
+      </tr>
+   <tr>
+				    <th> <%= f.label :voided,("voided :")%></th>
+		
+				    <td><%= f.select(:voided,{"NO" => "0","YES" => "1"})%></td>
+        
+      </tr>
+   		
+
+			
+<tr>
+				    <th><%= f.label :void_reason,("void_reason :") %></th>
+		
+				    <td><%= f.text_field :void_reason %></td>
+        
+      </tr>
+   
+		
+ 
+			<tr>
+				    <th><%= f.label :uuid,("UUID:") %></th>
+		
+				    <td><%= f.text_field :uuid %></td>
+        
+      </tr>
+
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save Encounter ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+
+<% end %>
+</div>
+
+</div>
+</div>

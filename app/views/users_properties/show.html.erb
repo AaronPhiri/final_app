@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @users_property.user_id %>
+</p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @users_property.property %>
+</p>
+
+<p>
+  <strong>Property value:</strong>
+  <%= @users_property.property_value %>
+</p>
+
+<%= link_to 'Edit', edit_users_property_path(@users_property) %> |
+<%= link_to 'Back', users_properties_path %>

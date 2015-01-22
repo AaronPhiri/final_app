@@ -1,0 +1,42 @@
+<% @page_title = "Patient List Page"%>
+
+
+<div id ="show"><h1>Listing patients</h1></div>
+<div id="users">
+<table>
+  <thead>
+    <tr id="userheader">
+      <th>Tribe</th>
+      <th>Creator</th>
+      <th>Date created</th>
+      <th>Changed by</th>
+      <th>Date changed</th>
+      <th>Voided</th>
+      <th>Voided by</th>
+      <th>Date voided</th>
+      <th>Void reason</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr class="<%=cycle('old','even')%>">
+        <td><%= patient.tribe %></td>
+        <td><%= patient.creator %></td>
+        <td><%= patient.date_created %></td>
+        <td><%= patient.changed_by %></td>
+        <td><%= patient.date_changed %></td>
+        <td><%= patient.voided %></td>
+        <td><%= patient.voided_by %></td>
+        <td><%= patient.date_voided %></td>
+        <td><%= patient.void_reason %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

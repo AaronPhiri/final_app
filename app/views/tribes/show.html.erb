@@ -1,0 +1,26 @@
+<% @page_title ="Tribe Show Page"%>
+
+<div id="show"><h1>Showing the tribe</h1></div>
+
+
+<div id="form">
+<p>
+  <strong>Retired:</strong>
+  <%= @tribe.retired %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tribe.name %>
+</p>
+</div>
+<div id="backonshow">
+		<table>
+		<tr>
+								<td><%=button_to("Edit",edit_tribe_path(@tribe),:method => "get",:id => "button")%></td>
+								<td><%=button_to("<<Back",tribes_path,:method => "get",:id => "button")%></td>
+					</tr>
+	</table>
+</div>
+
+

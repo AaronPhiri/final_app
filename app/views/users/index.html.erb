@@ -1,0 +1,52 @@
+<% @page_title = "Users List Page"%>
+
+
+<div id ="show"><h1>Listing users</h1></div>
+<div id="users">
+<table>
+  <thead>
+    <tr id="userheader">
+      <th>System</th>
+      <th>Username</th>
+     
+      
+      <th>Creator</th>
+      <th>Last seen</th>
+      <th>Changed by</th>
+      
+      <th>Person</th>
+      <th>Retired</th>
+      <th colspan="3">Actions</th>
+      
+      
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr class="<%=cycle('old','even')%>">
+        <td><%= user.system_id if user.system.nil? || "null" %></td>
+        <td><%= user.username %></td>
+        
+       
+        <td><%= user.creator %></td>
+        <td><%= user.updated_at%></td>
+        <td><%= user.changed_by %></td>
+        
+        <td><%= user.person_id %></td>
+        <td><%= user.retired %></td>
+        
+        
+        
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', delete_user_path(:id => user.id, :method => "delete", :data =>  { confirm: 'Are you sure?' }) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+

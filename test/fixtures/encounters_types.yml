@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  description: MyText
+  creator: 
+  date_created: 2014-12-29 21:22:14
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 21:22:14
+  retire_reason: 
+  uuid: 
+
+two:
+  name: 
+  description: MyText
+  creator: 
+  date_created: 2014-12-29 21:22:14
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 21:22:14
+  retire_reason: 
+  uuid: 

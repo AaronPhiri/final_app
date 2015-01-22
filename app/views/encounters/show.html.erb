@@ -1,0 +1,92 @@
+<% @page_title ="Encounter Show Page"%>
+
+<div id="show"><h1>Showing the Encounter</h1></div>
+
+
+<div id="form">
+
+<p>
+  <strong>Encounter type:</strong>
+  <%= @encounter.encounter_type %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @encounter.patient_id %>
+</p>
+
+<p>
+  <strong>Provider:</strong>
+  <%= @encounter.provider_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @encounter.location_id %>
+</p>
+
+<p>
+  <strong>Form:</strong>
+  <%= @encounter.form_id %>
+</p>
+
+<p>
+  <strong>Encounter datetime:</strong>
+  <%= @encounter.encounter_datetime %>
+</p>
+
+<p>
+
+  <strong>Creator:</strong>
+  <%= @encounter.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @encounter.date_created %>
+</p>
+
+<p>
+  <strong>Voided:</strong>
+  <%= @encounter.voided %>
+</p>
+
+<p>
+  <strong>Voided by:</strong>
+  <%= @encounter.voided_by %>
+</p>
+
+<p>
+  <strong>Date voided:</strong>
+  <%= @encounter.date_voided %>
+</p>
+
+<p>
+  <strong>Void reason:</strong>
+  <%= @encounter.void_reason %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @encounter.uuid %>
+</p>
+
+<p>
+  <strong>Changed by:</strong>
+  <%= @encounter.changed_by %>
+</p>
+
+<p>
+  <strong>Date changed:</strong>
+  <%= @encounter.date_changed %>
+</p>
+</div>
+		<div id="backonshow">
+		<table>
+		<tr>
+								<td><%=button_to("Edit",edit_encounter_path(@encounter),:method => "get",:id => "button")%></td>
+								<td><%=button_to("<<Back",encounters_path,:method => "get",:id => "button")%></td>
+					</tr>
+		</table>
+		</div>
+

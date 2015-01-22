@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  encounter_type: 
+  patient_id: 
+  provider_id: 
+  location_id: 
+  form_id: 
+  encounter_datetime: 2014-12-29 10:52:18
+  creator: 
+  date_created: 2014-12-29 10:52:18
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 10:52:18
+  void_reason: 
+  uuid: 
+  changed_by: 
+  date_changed: 2014-12-29 10:52:18
+
+two:
+  encounter_type: 
+  patient_id: 
+  provider_id: 
+  location_id: 
+  form_id: 
+  encounter_datetime: 2014-12-29 10:52:18
+  creator: 
+  date_created: 2014-12-29 10:52:18
+  voided: 
+  voided_by: 
+  date_voided: 2014-12-29 10:52:18
+  void_reason: 
+  uuid: 
+  changed_by: 
+  date_changed: 2014-12-29 10:52:18

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalApp</title>
+  <%= stylesheet_link_tag('cohorts', :media => 'all') %>
+  <%=javascript_include_tag('application')%>
+  <%= csrf_meta_tags %>
+<script src="jquery.1.9.1.min.js" type="text/javascript"></script>
+<script src="highcharts.js" type="text/javascript"></script>
+
+</head>
+<body id="body">
+<div id="top">Welcome <%= session[:username]%>  at <%= @page_title %> <%=button_to("Logout",{:controller=>"Access",:action=>"logout"},:id=>"logout")%></div>
+<div id="whole">
+<div id="nav">
+<table>
+
+<tr><td><%=button_to("List All Cohorts",cohorts_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Add Cohorts",new_cohort_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("search Cohorts",cohorts_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("Summary of Cohorts",cohorts_path,:method => "get",:id => "button")%></td></tr>
+<tr><td><%=button_to("<<Back",administrator_page_index_path,:method => "get",:id => "button")%></td></tr>
+</table>
+
+</div>
+<div id="content"><%= yield %></div>
+
+
+
+</div>
+
+
+</body>
+</html>

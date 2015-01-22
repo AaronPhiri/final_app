@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cohort.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cohort.description %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @cohort.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @cohort.date_created %>
+</p>
+
+<p>
+  <strong>Voided:</strong>
+  <%= @cohort.voided %>
+</p>
+
+<p>
+  <strong>Voided by:</strong>
+  <%= @cohort.voided_by %>
+</p>
+
+<p>
+  <strong>Date voided:</strong>
+  <%= @cohort.date_voided %>
+</p>
+
+<p>
+  <strong>Void reason:</strong>
+  <%= @cohort.void_reason %>
+</p>
+
+<p>
+  <strong>Changed by:</strong>
+  <%= @cohort.changed_by %>
+</p>
+
+<p>
+  <strong>Date changed:</strong>
+  <%= @cohort.date_changed %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @cohort.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_cohort_path(@cohort) %> |
+<%= link_to 'Back', cohorts_path %>

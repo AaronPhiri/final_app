@@ -1,0 +1,61 @@
+<% @page_title ="patient Show Page"%>
+
+<div id="show"><h1>Showing the patient</h1></div>
+
+
+<div id="form">
+<p>
+  <strong>Tribe:</strong>
+  <%= @patient.tribe %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @patient.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @patient.date_created %>
+</p>
+
+<p>
+  <strong>Changed by:</strong>
+  <%= @patient.changed_by %>
+</p>
+
+<p>
+  <strong>Date changed:</strong>
+  <%= @patient.date_changed %>
+</p>
+
+<p>
+  <strong>Voided:</strong>
+  <%= @patient.voided %>
+</p>
+
+<p>
+  <strong>Voided by:</strong>
+  <%= @patient.voided_by %>
+</p>
+
+<p>
+  <strong>Date voided:</strong>
+  <%= @patient.date_voided %>
+</p>
+
+<p>
+  <strong>Void reason:</strong>
+  <%= @patient.void_reason %>
+</p>
+
+</div>
+		<div id="backonshow">
+		<table>
+		<tr>
+								<td><%=button_to("Edit",edit_patient_path(@patient),:method => "get",:id => "button")%></td>
+								<td><%=button_to("<<Back",patients_path,:method => "get",:id => "button")%></td>
+					</tr>
+		</table>
+		</div>
+

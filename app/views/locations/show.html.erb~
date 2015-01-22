@@ -1,0 +1,123 @@
+<% @page_title = "Location Show page"%>
+<div id="show"><h1>Showing the Location</h1></div>
+
+
+<div id="form">
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @location.description %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @location.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @location.address2 %>
+</p>
+
+<p>
+  <strong>City village:</strong>
+  <%= @location.city_village %>
+</p>
+
+
+
+
+
+<p>
+  <strong>Country:</strong>
+  <%= @location.country %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @location.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @location.date_created %>
+</p>
+
+<p>
+  <strong>Country district:</strong>
+  <%= @location.country_district %>
+</p>
+
+<p>
+  <strong>Neighborhood cell:</strong>
+  <%= @location.neighborhood_cell %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @location.region %>
+</p>
+
+<p>
+  <strong>Subregion:</strong>
+  <%= @location.subregion %>
+</p>
+
+<p>
+  <strong>Township division:</strong>
+  <%= @location.township_division %>
+</p>
+
+<p>
+  <strong>Retired:</strong>
+  <%= @location.retired %>
+</p>
+
+<p>
+  <strong>Retired by:</strong>
+  <%= @location.retired_by %>
+</p>
+
+<p>
+  <strong>Date retired:</strong>
+  <%= @location.date_retired %>
+</p>
+
+<p>
+  <strong>Retire reason:</strong>
+  <%= @location.retire_reason %>
+</p>
+
+<p>
+  <strong>Parent location:</strong>
+  <%= @location.parent_location %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @location.uuid %>
+</p>
+</div>
+		<div id="backonshow">
+		<table>
+		<tr>
+								<td><%=button_to("Edit",edit_location_path(@location),:method => "get",:id => "button")%></td>
+								<td><%=button_to("<<Back",locations_path,:method => "get",:id => "button")%></td>
+					</tr>
+		</table>
+		</div>
+

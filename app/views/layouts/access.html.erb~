@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FinalApp</title>
+  <%= stylesheet_link_tag('access', :media => 'all') %>
+  <%= javascript_include_tag('application')%>
+  <%= csrf_meta_tags %>
+<script src="jquery.1.9.1.min.js" type="text/javascript"></script>
+<script src="highcharts.js" type="text/javascript"></script>
+<script src="jquery-ui.min.js" type="text/javascript"></script>
+
+
+</script>
+</head>
+<body id="accessbody">
+<div id="accesstop">Welcome at <%= @page_title %></div>
+<div id="accessaccess">
+<div id="accessleft"></div>
+<div id="accesscenter">
+
+<% if accessMessage %>
+<p id="notice"><%=notice %></p>
+<% end %>
+
+<%= yield %>
+</div>
+
+<div id="accessright"></div>
+</div>
+<div id="accessbottom"></div>
+
+</body>
+</html>

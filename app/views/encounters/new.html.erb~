@@ -1,0 +1,15 @@
+<% @page_title ="Create Encounter Page"%>
+<div id="show"><h2> create New Encounter</h2></div>
+<div>
+<%= render 'form' %>
+
+<div id="back" >
+								<table>
+								<tr>
+														<td><%=button_to("<<Back",encounters_path,:method => "get",:id => "button")%></td>
+											</tr>
+								</table>
+		</div>
+</div>
+
+		

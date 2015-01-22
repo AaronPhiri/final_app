@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  description: 
+  address1: 
+  address2: 
+  city_village: 
+  state_province: 
+  postal_code: 
+  country: 
+  latitude: 
+  longitude: 
+  creator: 
+  date_created: 2014-12-29 12:55:41
+  country_district: 
+  neighborhood_cell: 
+  region: 
+  subregion: 
+  township_division: 
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 12:55:41
+  retire_reason: 
+  parent_location: 
+  uuid: 
+
+two:
+  name: 
+  description: 
+  address1: 
+  address2: 
+  city_village: 
+  state_province: 
+  postal_code: 
+  country: 
+  latitude: 
+  longitude: 
+  creator: 
+  date_created: 2014-12-29 12:55:41
+  country_district: 
+  neighborhood_cell: 
+  region: 
+  subregion: 
+  township_division: 
+  retired: 
+  retired_by: 
+  date_retired: 2014-12-29 12:55:41
+  retire_reason: 
+  parent_location: 
+  uuid: 

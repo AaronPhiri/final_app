@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Drug:</strong>
+  <%= @drug.drug_id %>
+</p>
+
+<p>
+  <strong>Concept:</strong>
+  <%= @drug.concept_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @drug.name %>
+</p>
+
+<p>
+  <strong>Combination:</strong>
+  <%= @drug.combination %>
+</p>
+
+<p>
+  <strong>Dosage form:</strong>
+  <%= @drug.dosage_form %>
+</p>
+
+<p>
+  <strong>Dosage strength:</strong>
+  <%= @drug.dosage_strength %>
+</p>
+
+<p>
+  <strong>Maximum daily dose:</strong>
+  <%= @drug.maximum_daily_dose %>
+</p>
+
+<p>
+  <strong>Minimum daily dose:</strong>
+  <%= @drug.minimum_daily_dose %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @drug.route %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @drug.units %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @drug.creator %>
+</p>
+
+<p>
+  <strong>Date created:</strong>
+  <%= @drug.date_created %>
+</p>
+
+<p>
+  <strong>Retired:</strong>
+  <%= @drug.retired %>
+</p>
+
+<p>
+  <strong>Retired by:</strong>
+  <%= @drug.retired_by %>
+</p>
+
+<p>
+  <strong>Date retired:</strong>
+  <%= @drug.date_retired %>
+</p>
+
+<p>
+  <strong>Retire reason:</strong>
+  <%= @drug.retire_reason %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @drug.uuid %>
+</p>
+
+<%= link_to 'Edit', edit_drug_path(@drug) %> |
+<%= link_to 'Back', drugs_path %>

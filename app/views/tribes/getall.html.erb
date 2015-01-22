@@ -1,0 +1,59 @@
+<% @page_title = "Tribe with patients List Page"%>
+
+
+<div id ="show"><h2>Listing tribes with patients</h2></div>
+<div id="users">
+<table>
+  <thead>
+    <tr id="userheader">
+      
+      <th>Name</th>
+      <th>Count of patients</th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tribesall.each do |tribe| %>
+     <% if tribe.patients.count > 0%>
+      <tr class="<%=cycle('old','even')%>">
+       
+        <td class="name"><%= tribe.name %></td>
+        <td><%= tribe.patients.count %></td>
+        
+      </tr>
+    
+     <%end%>
+    <% end %>
+  </tbody>
+</table>
+<div>
+
+			<table>
+    <thead>
+    </thead>
+    <tbody>
+						<tr>
+<td rowspan="3"><%= will_paginate @tribesall %></td>
+</tr>		
+	
+  </tbody>
+		</table>
+
+</div>
+</br>
+<div >
+<table>
+<tr>
+						<td><%=button_to("<<Back to list",tribes_path,:method => "get",:id => "button")%></td>
+						<td><%=button_to("Show in a graph form",showall_tribes_path,:method => "get",:id => "button")%></td>
+						
+			</tr>
+</table>
+
+</div>
+</div>
+
+
+
+

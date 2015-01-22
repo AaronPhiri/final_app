@@ -1,0 +1,117 @@
+<% @page_title =" User Search Page"%>
+<div id="show"><h1>Enter the name of user to search</h1></div>
+<div>
+<div id="form">
+<% if notice %>
+   <p id="notice"><%=notice %></p>
+<%end%>
+<%= form_tag(:action => "searchbyname") do |f| %>
+<table>
+<thead>
+</thead>
+<tbody>
+<tr id ="searchuser">    
+<td><%= text_field_tag("username",params[:username])  %></td>
+<td colspan="2" align="center"><%= submit_tag("Seach User by name",:id =>"button")%></td>        
+</tr>
+  </tbody>
+</table>
+<% end %>
+<%= form_tag(:action => "searchbyname") do |f| %>
+<table>
+<thead>
+</thead>
+<tbody>
+<tr id ="searchuser">    
+<td> <%= date_select"yea",
+
+:order => [:year]
+
+  %></td>
+<td colspan="2" align="center"><%= submit_tag("Seach User by year",:id =>"button")%></td>        
+</tr>
+  </tbody>
+</table>
+<% end %>
+
+
+
+</div>
+
+
+</br>
+<div id="backforsearch">
+								<table>
+								<tr>
+														<td><%=button_to("<<Back",users_path,:method => "get",:id => "button")%></td>
+											</tr>
+								</table>
+		</div>
+</div>
+
+		
+
+<div class="hide">
+
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Count  </th>
+     
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+     
+      <tr>
+       
+        <td class="name"><%= user.username %></td>
+        
+        
+      </tr>
+    
+    
+    <% end %>
+  </tbody>
+</table>
+
+
+</div>
+
+  <script>
+$(function() {
+var availableTags = [
+"ActionScript",
+"AppleScript",
+"Asp",
+"BASIC",
+"C",
+"C++",
+"Clojure",
+"COBOL",
+"ColdFusion",
+"Erlang",
+"Fortran",
+"Groovy",
+"Haskell",
+"Java",
+"JavaScript",
+"Lisp",
+"Perl",
+"PHP",
+"Python",
+"Ruby",
+"Scala",
+"Scheme"
+];
+$( "#username" ).autocomplete({
+source: availableTags
+});
+});
+</script>
+
+

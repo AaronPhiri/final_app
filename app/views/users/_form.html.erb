@@ -1,0 +1,119 @@
+<div id="wholeform">
+<div id="form">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+<table>
+  <thead>
+   
+  </thead>
+
+  <tbody>
+   
+      <tr>
+				    <th> <%= f.label :system_id,("System :") %></th>
+		
+				    <td><%= f.select(:system_id,@system.map{|p| [p.system_name,p.id]})  %></td>
+        
+      </tr>
+
+			<tr>
+				    <th><%= f.label :username,("UserName:") %></th>
+		
+				    <td><%= f.text_field :username %></td>
+        
+      </tr>
+
+
+			<tr>
+				    <th><%= f.label :password,("Password		:") %></th>
+		
+				    <td> <%= f.text_field :password %></td>
+        
+      </tr>
+
+   		<tr>
+				    <th><%= f.label :password_confirmation,("Confirm Password		:") %></th>
+		
+				    <td><%= f.text_field :password_confirmation %></td>
+        
+      </tr>
+ 
+   		<tr>
+				    <th><%= f.label :secret_question,("Secret Question	:") %></th>
+		
+				    <td><%= f.text_field :secret_question %></td>
+        
+      </tr>
+
+   		<tr>
+				    <th><%= f.label :secret_answer,("Secret Answer :") %></th>
+		
+				    <td><%= f.text_field :secret_answer %></td>
+        
+      </tr>
+   
+   		
+
+			
+
+		
+
+			<tr>
+				    <th><%= f.label :person_id,("Person Id :") %></th>
+		
+				    <td><%= f.select(:person_id,@person.map{|p| [p.id,p.id]}) %></td>
+        
+      </tr>
+
+			<tr>
+				    <th> <%= f.label :retired,("Retired :")%></th>
+		
+				    <td><%= f.select(:retired,{"NO" => "0","YES" => "1"})%></td>
+        
+      </tr>
+
+			
+			<tr>
+				    <th><%= f.label :retire_reason,("Retire Reason :") %></th>
+		
+				    <td><%= f.text_field :retire_reason %></td>
+        
+      </tr>
+
+ 
+			<tr>
+				    <th><%= f.label :uuid,("UUID:") %></th>
+		
+				    <td><%= f.text_field :uuid %></td>
+        
+      </tr>
+
+			<tr>
+       
+  
+        		<td colspan="2" align="center"><%= f.submit "Save User ",:id =>"button"%></td>
+        
+      </tr>
+			
+
+  </tbody>
+</table>
+
+<% end %>
+</div>
+
+</div>
+</div>
+

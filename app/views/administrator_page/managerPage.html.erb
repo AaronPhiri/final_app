@@ -1,0 +1,23 @@
+<%@page_title = "Administrator Page"%>
+
+
+<table>
+			<tr>
+					<td ><%= button_to("Manage Users",users_path,:method => "get",:id => "clickbutton")%></td>
+					<td><%= button_to("Manage Locations",locations_path,:method =>"get",:id => "clickbutton")%></td>
+			</tr>
+					
+			<tr>
+					<td ><%=button_to("Manage encounters",encounters_path,:method =>"get",:id => "clickbutton")%></td>
+					<td><%=button_to("Manage Tribes",tribes_path,:method => "get",:id => "clickbutton")%></td>
+			</tr>
+			<tr>
+					<td><%=button_to("Manage Patients",patients_path,:method => "get",:id => "clickbutton")%></td>
+					<td><%=button_to("Go to indicators",indicators_path,:method => "get",:id => "clickbutton")%></td>
+			</tr>
+			<tr>
+					<td><%= button_to("<<Back",{:controller=>"Access"},:id => "clickbutton")%></td>
+					<td></td>
+			</tr>
+
+</table>
